@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Malla Interactiva de Enfermería</title>
+<style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #faf7fb;
+  color: #333;
+}
+
+header {
+  background-color: #c8a2c8;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin: 20px 0 10px;
+  color: #a875c3;
+  font-size: 1.2rem;
+  border-left: 4px solid #a875c3;
+  padding-left: 8px;
+}
+
+#malla {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.ramo {
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background-color: white;
+  display: block;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.ramo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.ramo.aprobado {
+  text-decoration: line-through;
+  background-color: #e8d3f0;
+  color: #777;
+  box-shadow: none;
+  transform: scale(1);
+}
+
+.ramo.locked {
+  color: #bbb;
+  background-color: #f0eef1;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.ramo.ingles {
+  background-color: #d1b3f0;
+}
+
+.ramo.ingles.aprobado {
+  background-color: #b190e0;
+}
+
+@media (max-width: 600px) {
+  .ramo {
+    font-size: 0.9rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>Malla Interactiva de Enfermería</header>
+
+<div id="malla">
+
+<h2>Primer Semestre</h2>
+<div class="ramo" data-id="1" data-unlocks="6">Bases morfológicas 1</div>
+<div class="ramo" data-id="2" data-unlocks="7">Biología molecular 1</div>
+<div class="ramo" data-id="3">Electivo</div>
+<div class="ramo" data-id="4" data-unlocks="9">Bases conceptuales de la enfermería</div>
+<div class="ramo" data-id="5" data-unlocks="10">Gestión e investigación 1</div>
+
+<h2>Segundo Semestre</h2>
+<div class="ramo locked" data-id="6" data-unlocks="12">Bases morfológicas 2</div>
+<div class="ramo locked" data-id="7" data-unlocks="13">Biología molecular 2</div>
+<div class="ramo" data-id="8" data-unlocks="14">Fundamentos biológicos 1</div>
+<div class="ramo locked" data-id="9" data-unlocks="15">Enfermería en el proceso y crecimiento del niño y adolescente</div>
+<div class="ramo locked" data-id="10" data-unlocks="16">Gestión e investigación 2</div>
+<div class="ramo ingles" data-id="101" data-unlocks="102">Inglés principiante</div>
+
+<h2>Tercer Semestre</h2>
+<div class="ramo locked" data-id="12" data-unlocks="18">Fundamentos biológicos 2</div>
+<div class="ramo" data-id="11">Electivo</div>
+<div class="ramo locked" data-id="15" data-unlocks="20">Enfermería en el proceso y crecimiento del adulto</div>
+<div class="ramo locked" data-id="16" data-unlocks="21">Gestión e investigación 3</div>
+<div class="ramo ingles locked" data-id="102" data-unlocks="103">Inglés básico</div>
+
+<h2>Cuarto Semestre</h2>
+<div class="ramo locked" data-id="18" data-unlocks="23">Fundamentos biológicos 3</div>
+<div class="ramo locked" data-id="20" data-unlocks="25">Enfermería básica</div>
+<div class="ramo locked" data-id="21" data-unlocks="26">Gestión e investigación 4</div>
+<div class="ramo ingles locked" data-id="103" data-unlocks="104">Inglés pre-intermedio</div>
+
+<h2>Quinto Semestre</h2>
+<div class="ramo locked" data-id="25" data-unlocks="28">Enfermería en el adulto 1</div>
+<div class="ramo locked" data-id="26" data-unlocks="29">Gestión en enfermería 1</div>
+<div class="ramo ingles locked" data-id="104">Inglés intermedio</div>
+
+<h2>Sexto Semestre</h2>
+<div class="ramo locked" data-id="28" data-unlocks="31">Enfermería en el adulto 2</div>
+<div class="ramo locked" data-id="29" data-unlocks="32">Gestión en enfermería 2</div>
+
+<h2>Séptimo Semestre</h2>
+<div class="ramo locked" data-id="31" data-unlocks="34,35">Enfermería Materno-Infantil y Adolescente 1</div>
+<div class="ramo locked" data-id="32" data-unlocks="36">Diseño de investigación en Enfermería 1</div>
+
+<h2>Octavo Semestre</h2>
+<div class="ramo locked" data-id="34" data-unlocks="37">Enfermería Materno-Infantil y Adolescente 2</div>
+<div class="ramo locked" data-id="35" data-unlocks="39">Enfermería en emergencias médico-quirúrgicas</div>
+<div class="ramo locked" data-id="36" data-unlocks="40">Diseño de investigación en Enfermería 2</div>
+
+<h2>Noveno Semestre</h2>
+<div class="ramo locked" data-id="39" data-unlocks="41,42">Práctica profesional controlada intramuro y extramuro</div>
+
+<h2>Décimo Semestre</h2>
+<div class="ramo locked" data-id="41">Práctica profesional controlada intramuro y extramuro</div>
+
+</div>
+
+<script>
+const ramos = document.querySelectorAll('.ramo');
+
+function checkPrereqsMet(ramo) {
+  const prereqs = Array.from(ramos).filter(r =>
+    r.dataset.unlocks?.split(',').includes(ramo.dataset.id)
+  );
+  return prereqs.every(pr => pr.classList.contains('aprobado'));
+}
+
+function updateLocks() {
+  ramos.forEach(ramo => {
+    if (!ramo.classList.contains('aprobado') && !checkPrereqsMet(ramo)) {
+      ramo.classList.add('locked');
+    } else if (checkPrereqsMet(ramo)) {
+      ramo.classList.remove('locked');
+    }
+  });
+}
+
+ramos.forEach(ramo => {
+  ramo.addEventListener('click', () => {
+    if (ramo.classList.contains('locked')) return;
+
+    if (!ramo.classList.contains('aprobado')) {
+      ramo.classList.add('aprobado');
+    } else {
+      ramo.classList.remove('aprobado');
+    }
+
+    updateLocks();
+  });
+});
+</script>
+
+</body>
+</html>
